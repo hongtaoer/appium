@@ -1,4 +1,4 @@
-import io.appium.java_client.AppiumDriver;
+import com.topjet.appium.ios.driver.user.DriverLogin;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -11,7 +11,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Map;
 
 /**
  * Created by pengtao on 6/3/16.
@@ -22,7 +21,7 @@ public class MainTest {
     @Rule
     TestName name = new TestName();
 
-    public static AppiumDriver<MobileElement> driver = null;
+    public static IOSDriver<MobileElement> driver = null;
 
     @Before
     public void setUp() throws MalformedURLException {
@@ -41,15 +40,7 @@ public class MainTest {
     @Test
     public void getName() {
 
-        MobileElement mobileNum = driver.findElementByXPath
-                ("//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIATextField[1]");
 
-        MobileElement password = driver.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIASecureTextField[1]");
-
-        mobileNum.sendKeys("18602108194");
-        password.sendKeys("112233");
-        MobileElement loginButton = driver.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAButton[1]");
-        loginButton.click();
 
         File appDir = new File("/Users/pengtao/Desktop/");
         File app = new File(appDir, "560Driver_v200_test.ipa");
@@ -57,6 +48,11 @@ public class MainTest {
 
         File appDir3 = new File("/Users/pengtao/Desktop/560Driver_v200_test.ipa");
         System.out.println(appDir3.getTotalSpace() + appDir3.getAbsolutePath());
+    }
+
+    @Test
+    public  void testLogin(){
+        DriverLogin.loginByPassword(driver);
     }
 }
 
