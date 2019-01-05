@@ -17,7 +17,6 @@ import java.net.URL;
  */
 public class MainTest {
 
-
     public
     @Rule
     TestName name = new TestName();
