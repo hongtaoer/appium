@@ -43,7 +43,6 @@ public class MainTest {
 
         File appDir = new File("/Users/pengtao/Desktop/");
         File app = new File(appDir, "560Driver_v200_test.ipa");
-
         System.out.println(app.getAbsolutePath());
 
         File appDir3 = new File("/Users/pengtao/Desktop/560Driver_v200_test.ipa");
