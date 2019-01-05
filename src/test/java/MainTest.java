@@ -28,7 +28,6 @@ public class MainTest {
     public void setUp() throws MalformedURLException {
         File appDir = new File("/Users/pengtao/Desktop/560Driver_v200_test.ipa");
 //        File app = new File(appDir,"560Driver_v200_test.ipa");
-        System.out.println(appDir.getTotalSpace());
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "9.3");
         desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "IPhone 6");
@@ -42,17 +41,17 @@ public class MainTest {
     public void getName() {
 
 
-
         File appDir = new File("/Users/pengtao/Desktop/");
         File app = new File(appDir, "560Driver_v200_test.ipa");
-        System.out.println(app.getTotalSpace() + app.getAbsolutePath());
+
+        System.out.println(app.getAbsolutePath());
 
         File appDir3 = new File("/Users/pengtao/Desktop/560Driver_v200_test.ipa");
-        System.out.println(appDir3.getTotalSpace() + appDir3.getAbsolutePath());
+        System.out.println(appDir3.getAbsolutePath());
     }
 
     @Test
-    public  void testLogin(){
+    public void testLogin() {
         DriverLogin.loginByPassword(driver);
     }
 }
